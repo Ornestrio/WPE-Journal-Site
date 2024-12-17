@@ -44,6 +44,19 @@ html, body
     z-index: 10;      /* Ensure it's above other content */
     animation: fadeSlideInText 2s ease-out forwards;
 }
+.summary
+{
+    letter-spacing: 5px;
+    font-family: "../fonts/AzereteMono.ttf";
+    position: absolute;
+    top: 30%;   /* Distance from the top */
+    left: 5%;  /* Distance from the left */
+    font-family: "Poppins";
+    font-size: 25px;  /* Adjust font size */
+    color: white;     /* Text color */
+    z-index: 10;      /* Ensure it's above other content */
+    animation: fadeSlideInText 2s ease-out forwards;
+}
 .container 
 {
     display: flex;
