@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+@font-face {
+    font-family: AzereteMono;
+    src: url('../fonts/AzereteMono.ttf');
+}
+
+html, body {
+    background: rgb(20,20,20);
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    margin: 0;
+    justify-content: flex-end; /* Move everything to the right */
+    align-items: center;       /* Center vertically */
+    font-family: url("../fonts/AzereteMono.ttf");
+}
+
+.header {
+    letter-spacing: 5px;
+    font-family: "../fonts/AzereteMono.ttf";
+    position: absolute;
+    top: 15%;   /* Distance from the top */
+    left: 5%;  /* Distance from the left */
+    font-family: "Poppins";
+    font-size: 25px;  /* Adjust font size */
+    color: white;     /* Text color */
+    z-index: 10;      /* Ensure it's above other content */
+    animation: fadeSlideInText 2s ease-out forwards;
+}
+
+.name {
+    letter-spacing: 5px;
+    font-family: "../fonts/AzereteMono.ttf";
+    position: absolute;
+    top: 20%;   /* Distance from the top */
+    left: 5%;  /* Distance from the left */
+    font-family: "Poppins";
+    font-size: 25px;  /* Adjust font size */
+    color: white;     /* Text color */
+    z-index: 10;      /* Ensure it's above other content */
+    animation: fadeSlideInText 2s ease-out forwards;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+    width: 80%; /* Reduce width to fit content on the right */
+}
+
+@keyframes fadeSlideIn 
+{
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) rotate(45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(45deg); 
+    }
+}
+
+@keyframes fadeSlideInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start above the screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at its original position */
+    }
+}
+
+.svg-wrapper {
+    width: 100px;  /* Adjust size to scale down */
+    transform: rotate(45deg);  /* Rotate the container to create the diamond */
+    box-shadow: 10px 5px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    position: relative;
+    animation: fadeSlideIn 2s ease-out forwards;
+    opacity: 0; /* Make it invisible initially */
+}
+
+/* Different colors for each diamond */
+.svg-wrapper:nth-child(1) {
+    animation-delay: 0s;
+    stroke: #ff4c4c; /* Red */
+    stroke-dashoffset: 20;
+}
+
+.svg-wrapper:nth-child(2) {
+    animation-delay: 0.3s;
+    stroke: #4caf50; /* Green */
+    stroke-dashoffset: 50;
+}
+
+.svg-wrapper:nth-child(3) {
+    animation-delay: 0.6s;
+    stroke: #2196f3; /* Blue */
+    stroke-dashoffset: 10;
+}
+
+.svg-wrapper:nth-child(4) {
+    animation-delay: 0.9s;
+    stroke: #ffeb3b; /* Yellow */
+    stroke-dashoffset: 30;
+}
+
+.svg-wrapper:nth-child(5) {
+    animation-delay: 1.2s;
+    stroke: #9c27b0; /* Purple */
+    stroke-dashoffset: 20;
+}
+
+.svg-wrapper:nth-child(6) {
+    animation-delay: 1.5s;
+    stroke: #ff9800; /* Orange */
+    stroke-dashoffset: 20;
+}
+
+.svg-wrapper:nth-child(7) {
+    animation-delay: 1.8s;
+    stroke: #009688; /* Teal */
+    stroke-dashoffset: 25;
+}
+
+.svg-wrapper:nth-child(8) {
+    animation-delay: 2.1s;
+    stroke: #e91e63; /* Pink */
+    stroke-dashoffset: 15;
+}
+
+.svg-wrapper:nth-child(9) {
+    animation-delay: 2.4s;
+    stroke: #3f51b5; /* Blue for "Exit" */
+    stroke-dashoffset: 25;
+}
+
+
+.svg-wrapper.red { top: -160px; left: 135px; }
+.svg-wrapper.green { top: -90px; left: 110px; }
+.svg-wrapper.blue { top: -22px; right: 52px; }
+.svg-wrapper.yellow { top: 45px; right: 75px; }
+.svg-wrapper.purple { top: 113px; right: 236px; }
+.svg-wrapper.orange { top: -160px; left: -2px; }
+.svg-wrapper.teal { top: -90px; left: -226px; }
+.svg-wrapper.pink { top: -20px; right: 200px; }
+.svg-wrapper.back { top: 50px; left: -218px; }
+
+
+/* Position the diamonds to alternate up and down */
+
+.shape {
+    fill: transparent;
+    stroke-width: 6px; /* Scale stroke width down */
+    stroke-dasharray: 203 5;
+    stroke-dashoffset: 60;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2.5s;
+}
+
+.text {
+    font-family: 'AzereteMono';
+    font-size: 80%;  /* Scale down text size */
+    line-height: 30px;
+    letter-spacing: 5px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Rotate text to keep it upright */
+    pointer-events: none;
+}
+
+.shape:hover {
+    stroke-width: 6px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 690;
+}
